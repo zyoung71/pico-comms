@@ -8,16 +8,16 @@ extern "C"
 #include <pico/stdio_usb.h>
 #include <tusb.h>
 
-#include <stdbool.h>
+#include "comms_def.h"
 
 /**
  * Reads incoming serial data over the USB port.
  * @param buff Input character buffer that is written to,
  * @param max_bytes Maximum amount of characters to read.
- * @return True if complete read was successful, false if not. 
+ * @return 0 if complete read was successful, -1 if failed, -2 if timed-out. 
  *
 */
-bool comms_read_serial_over_usb(char* buff, size_t max_bytes);
+int comms_read_serial_over_usb(char* buff, size_t max_bytes, uint32_t timeout_ms);
 
 #ifdef __cplusplus
 }

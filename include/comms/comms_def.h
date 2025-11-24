@@ -1,0 +1,14 @@
+#pragma once
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+#define COMMS_OK 0
+#define COMMS_FAIL -1
+#define COMMS_TIMEOUT -2
+
+#ifdef __cplusplus
+}
+#endif
