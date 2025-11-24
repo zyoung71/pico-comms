@@ -5,7 +5,6 @@ extern "C"
 {
 #endif
 
-#include <pico/stdio_usb.h>
 #include <tusb.h>
 
 #include "comms_def.h"
