@@ -2,6 +2,9 @@
 
 bool comms_read_serial_over_usb(char* buff, size_t max_bytes)
 {
+    if (!tud_cdc_connected())
+        return false;
+
     size_t bytes_read = 0;
     while (bytes_read < max_bytes - 1)
     {
