@@ -7,4 +7,10 @@ if (NOT TARGET pico-comms)
     target_include_directories(pico-comms PUBLIC
         include
     )
+
+    target_link_libraries(pico-comms
+        pico_stdlib
+        pico_stdio_usb
+    )
+
 endif()
