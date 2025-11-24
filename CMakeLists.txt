@@ -7,3 +7,4 @@ if (NOT TARGET pico-comms)
     target_include_directories(pico-comms PUBLIC
         include
     )
+endif()
