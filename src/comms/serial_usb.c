@@ -1,6 +1,17 @@
 #include <comms/serial_usb.h>
 #include <pico/time.h>
 
+int comms_serial_usb_init(void)
+{
+    if (!tusb_inited())
+    {
+        if (tusb_init())
+            return 0;
+        return -1;
+    }
+    return 0;
+}
+
 int comms_serial_read_line_over_usb_blocking(char* buff, size_t max_bytes, uint32_t timeout_ms)
 {
     if (!tud_cdc_connected())

@@ -10,6 +10,12 @@ extern "C"
 #include "comms_def.h"
 
 /**
+ * Initializes the USB serial communications.
+ * @return 0 (COMMS_OK) if successful, -1 (COMMS_FAIL) if failed.
+*/
+int comms_serial_usb_init(void);
+
+/**
  * Waits until a full incoming serial data line is read over the USB port.
  * @param buff Input character buffer that is written to.
  * @param max_bytes Maximum amount of characters to read.
