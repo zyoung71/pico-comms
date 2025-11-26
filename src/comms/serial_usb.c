@@ -81,7 +81,7 @@ int comms_serial_try_read_line_over_usb(char* buff, size_t max_bytes)
 {
     int result = COMMS_FAIL;
 
-    if (!tud_connected())
+    if (!tud_cdc_connected())
         return COMMS_FAIL;
 
     size_t bytes_read = 0;
@@ -117,7 +117,7 @@ int comms_serial_try_read_n_over_usb(char* buff, size_t max_bytes)
 {
     int result = COMMS_FAIL;
 
-    if (!tud_connected())
+    if (!tud_cdc_connected())
         return COMMS_FAIL;
 
     size_t bytes_read = 0;
