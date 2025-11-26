@@ -8,6 +8,7 @@ extern "C"
 #define COMMS_OK 0
 #define COMMS_FAIL -1
 #define COMMS_TIMEOUT -2
+#define COMMS_PARTIAL -3
 
 #ifdef __cplusplus
 }

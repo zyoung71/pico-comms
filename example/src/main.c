@@ -10,7 +10,20 @@ int main()
     char buff[128];
     while (1)
     {
-        int result = comms_serial_read_line_over_usb_blocking(buff, sizeof(buff), 3000);
+        int result = COMMS_FAIL;
+        
+        /* Read line blocking */
+        //result = comms_serial_read_line_over_usb_blocking(buff, sizeof(buff), 3000);
+        
+        /* Read N blocking */
+        //result = comms_serial_read_n_over_usb_blocking(buff, sizeof(buff), 3000);
+
+        /* Read line non-blocking */
+        result = comms_serial_try_read_line_over_usb(buff, sizeof(buff));
+
+        /* Read N non-blocking */
+        //result = comms_serial_try_read_n_over_usb(buff, sizeof(buff));
+
         if (result == COMMS_TIMEOUT)
         {
             printf("timed out\n");
