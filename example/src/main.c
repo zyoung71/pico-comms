@@ -26,18 +26,19 @@ int main()
     {
         tud_task();
         int result = 1;
-        
+        size_t bytes_read;
+
         /* Read line blocking */
-        //result = comms_serial_read_line_over_usb_blocking(buff, sizeof(buff), 3000);
+        //result = comms_serial_read_line_over_usb_blocking(buff, sizeof(buff), 3000, &bytes_read);
         
         /* Read N blocking */
-        //result = comms_serial_read_n_over_usb_blocking(buff, sizeof(buff), 3000);
+        //result = comms_serial_read_n_over_usb_blocking(buff, sizeof(buff), 3000, &bytes_read);
 
         /* Read line non-blocking */
-        //result = comms_serial_try_read_text_line_over_usb(buff, sizeof(buff));
+        //result = comms_serial_try_read_text_line_over_usb(buff, sizeof(buff), &bytes_read);
 
         /* Read N non-blocking */
-        //result = comms_serial_try_read_n_over_usb(buff, sizeof(buff));
+        //result = comms_serial_try_read_n_over_usb(buff, sizeof(buff), &bytes_read);
 
         switch (result)
         {
